@@ -24,25 +24,24 @@
 
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <h1 class="display-3 jumbotronTime">Work Day Scheduler</h1>
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <div class="row" id="time-block">
+      <div class="row" id="nineAm">
         <div class="col-2 hourExtra" id="row-hour">
           <p>
             9am
           </p>
         </div>
         <div class="col-10" id="row-textarea">
-          <p>
+          <p id="row-p">
             Events
           </p>
         </div>
       </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="./logic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./logic.js"></script>
   </body>
 </html>
