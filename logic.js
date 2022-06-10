@@ -1,30 +1,3 @@
-var nineAm = {
-    id: "9",
-    events: ""};
-var tenAm = {
-    id: "10",
-    events: ""};
-var elevenAm = {
-    id: "11",
-    events: ""};
-var twelvePm = {
-    id: "12",
-    events: ""};
-var onePm = {
-    id: "1",
-    events: ""};
-var twoPm = {
-    id: "2",
-    events: ""};
-var threePm = {
-    id: "3",
-    events: ""};
-var fourPm = {
-    id: "4",
-    events: ""};
-var fivePm = {
-    id: "5",
-    events: ""};
 
 $(document).ready(function (){
     loadEvents;
@@ -33,10 +6,18 @@ $(document).ready(function (){
 })
 
 //array holding hours and associated event data 
-var hourEvents = [
-    nineAm, tenAm, elevenAm, twelvePm, 
-    onePm, twoPm, threePm, fourPm, fivePm
-];
+var hourEvents = [];
+
+var hourDataObj = {
+    hour: hourRow,
+    event: hourEventInput,
+};
+
+hourRow = 
+
+var createRows = function() {
+    $(<)
+}
 
 //print loaded events 
 var printEvents = function(hourEvents){
