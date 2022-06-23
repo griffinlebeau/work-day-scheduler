@@ -1,4 +1,4 @@
-var timeAudit = moment().set();
+var timeAudit = moment().format("hh:mm a")
 var nineAM = $(".nine-row");
 var tenAM = $(".ten-row");
 var elevenAM = $(".eleven-row");
@@ -53,8 +53,6 @@ $(document).ready(function(){
     }
 })
 
-console.log(events)
-
 
 $(".row").on("click", "p", function(){
     var text = $(this)
@@ -86,14 +84,22 @@ var currentTime = moment().format('dddd MMMM Do YYYY');
 var jumbotronTime = $(".jumbotronTime");
 jumbotronTime.text(currentTime);
 
-var auditTime = function () {
-    for (var i = 0; i < events.length; i++) {
-        if (events[i].hour.isBefore(timeAudit)) {
+var timeNine = moment("09:00 AM", "hh:mm A");
+
+var hours = [
+    {
+        timeNine
+    }
+]
+
+var auditTime = function (hours) {
+    for (var i = 0; i < hours.length; i++) {
+        if (hours[i].isBefore(timeAudit)) {
             $(".row")
                 .addClass(".past")
                 .removeClass(".future .present");
         }
-        else if (events[i].hour.isAfter(timeAudit)) {
+        else if (hours[i].isAfter(timeAudit)) {
             $(".row")
                 .addClass(".future")
                 .removeClass(".past .present");
