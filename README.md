@@ -1,6 +1,6 @@
 # work-day-scheduler
 
-#Functions
+Functions
   - daily hour blocks following standard business hours
   - color coordination to indicate timeliness of events
   - date displayed at top of web page
