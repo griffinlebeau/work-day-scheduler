@@ -1,4 +1,4 @@
-var timeAudit = moment().format("hh:mm a")
+var timeAudit = moment().format("HH")
 var nineAM = $(".nine-row");
 var tenAM = $(".ten-row");
 var elevenAM = $(".eleven-row");
@@ -84,33 +84,137 @@ var currentTime = moment().format('dddd MMMM Do YYYY');
 var jumbotronTime = $(".jumbotronTime");
 jumbotronTime.text(currentTime);
 
-var timeNine = moment("09:00 AM", "hh:mm A");
+var timeNine = moment("09", "HH").format("HH");
+var timeTen = moment("10", "HH").format("HH");
+var timeEleven = moment("11", "HH").format("HH");
+var timeTwelve = moment("12", "HH").format("HH");
+var timeOne = moment("13", "HH").format("HH");
+var timeTwo = moment("14", "HH").format("HH");
+var timeThree = moment("15", "HH").format("HH");
+var timeFour = moment("16", "HH").format("HH");
+var timeFive = moment("17", "HH").format("HH");
 
-var hours = [
-    {
-        timeNine
-    }
-]
-
-var auditTime = function (hours) {
-    for (var i = 0; i < hours.length; i++) {
-        if (hours[i].isBefore(timeAudit)) {
-            $(".row")
-                .addClass(".past")
-                .removeClass(".future .present");
+var auditNine = function () {
+        if (timeNine < timeAudit) {
+            $("#nineAM").addClass("past").removeClass("future present");
         }
-        else if (hours[i].isAfter(timeAudit)) {
-            $(".row")
-                .addClass(".future")
-                .removeClass(".past .present");
+        else if (timeNine > timeAudit) {
+            $("#nineAM").addClass("future").removeClass("past present");
         }
         else {
-            $(".row")
-                .addClass(".present")
-                .removeClass(".past .future");
+            $("#nineAM").addClass("present").removeClass("past future");
         }
     }
+
+var auditTen = function () {
+        if (timeTen < timeAudit) {
+            $("#tenAM").addClass("past").removeClass("future present");
+        }
+        else if (timeTen > timeAudit) {
+            $("#tenAM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#tenAM").addClass("present").removeClass("past future");
+        }
+    }
+    
+var auditEleven = function () {
+        if (timeEleven < timeAudit) {
+            $("#elevenAM").addClass("past").removeClass("future present");
+        }
+        else if (timeEleven > timeAudit) {
+            $("#elevenAM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#elevenAM").addClass("present").removeClass("past future");
+        }
+    }
+
+var auditTwelve = function () {
+        if (timeTwelve < timeAudit) {
+            $("#twelvePM").addClass("past").removeClass("future present");
+        }
+        else if (timeTwelve > timeAudit) {
+            $("#twelvePM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#twelvePM").addClass("present").removeClass("past future");
+        }
+    }
+
+var auditOne = function () {
+        if (timeOne < timeAudit) {
+            $("#onePM").addClass("past").removeClass("future present");
+        }
+        else if (timeOne > timeAudit) {
+            $("#onePM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#onePM").addClass("present").removeClass("past future");
+        }
+    }
+
+var auditTwo = function () {
+        if (timeTwo < timeAudit) {
+            $("#twoPM").addClass("past").removeClass("future present");
+        }
+        else if (timeTwo > timeAudit) {
+            $("#twoPM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#twoPM").addClass("present").removeClass("past future");
+        }
+    }
+
+var auditThree = function () {
+        if (timeThree < timeAudit) {
+            $("#threePM").addClass("past").removeClass("future present");
+        }
+        else if (timeThree > timeAudit) {
+            $("#threePM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#threePM").addClass("present").removeClass("past future");
+        }
+    }
+
+var auditFour = function () {
+        if (timeFour < timeAudit) {
+            $("#fourPM").addClass("past").removeClass("future present");
+        }
+        else if (timeFour > timeAudit) {
+            $("#fourPM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#fourPM").addClass("present").removeClass("past future");
+        }
+    }
+
+var auditFive = function () {
+        if (timeFive < timeAudit) {
+            $("fivePM").addClass("past").removeClass("future present");
+        }
+        else if (timeFive > timeAudit) {
+            $("#fivePM").addClass("future").removeClass("past present");
+        }
+        else {
+            $("#fivePM").addClass("present").removeClass("past future");
+        }
+    }
+
+
+var finalAudit = function() {
+    auditNine();
+    auditTen();
+    auditEleven();
+    auditTwelve();
+    auditOne();
+    auditTwo();
+    auditThree();
+    auditFour();
+    auditFive()
 }
 
-setInterval(auditTime, 100000);
+setInterval(finalAudit, 1000);
+
 
